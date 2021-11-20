@@ -1,0 +1,404 @@
+﻿
+1. Write a C program to print your name, date of birth and mobile number using printf() and puts() functions.
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+int main(){
+	char *ch = 'shishir';
+	printf("My Name is : Shishir Gajurel\n");
+	puts("Date of birth is : 2057/05/26\n");
+	puts( ch);
+	getch();
+	return 0;
+}  
+
+2. Write a C program to display size  in bytes of different data types using sizeof() operator.
+#include<stdio.h>
+#include<conio.h>
+int main(){
+	
+	printf("The size of integer = %d bytes", sizeof(int));
+		printf("\nThe size of float = %d bytes", sizeof(float));
+			printf("\nThe size of character = %d bytes", sizeof(char));
+				printf("\nThe size of long = %d bytes", sizeof(long));
+				
+						printf("\nThe size of short = %d bytes", sizeof(short));
+						
+						getch();
+						return 0;
+}
+
+3. Write algorithm, flow-chart and program to compute the area and circumference of a circle with given radius r as input defining   π  as constant (Note: Area=πr2)
+#include<stdio.h>
+#include<conio.h>
+
+int main(){
+	
+	int num,year,month, week,day;
+	printf("Enter an integer:");
+	scanf("%d", &num);
+/*	printf("%d", num);*/
+	year=num/365;
+	num=num%365;
+	month=num/30;
+	num=num%30;
+	week=num/7;
+	day=num%7;
+	
+	printf("\nYear\tMonths\tWeeks\tDays");
+	printf("\n %d\t%d\t%d\t%d",year,month,week,day);
+	getch();
+	return 0;
+	
+}
+
+4. Write a C program to convert specified no of days into years, weeks and days.  (Note: Ignore leap year.)
+#include<stdio.h>
+#include<conio.h>
+
+int main(){
+	
+	int num,year,month,week,day;
+	
+	printf("Enter an integer:");
+	scanf("%d",&num);
+	
+	year=num/365;
+	num=num%365;
+	month=num/30;
+	num=num%30;
+	week=num/7;
+	day=num%7;
+	
+	printf("\nYear\tMonth\tWeeks\tDay");
+	printf("\n%d\t%d\t%d\t%d",year,month,week,day);
+	
+	getch();
+	return 0;	
+}
+
+5. Write an algorithm and C program that accepts two integers from the user as input and calculates the sum,diference,product,quotient and remainder applying different arithmetic operators between two integers. 
+	#include<stdio.h>
+	#include<conio.h>
+int main(){
+	
+	int num1,num2,sum,dif,mul,div,rem;
+	
+	printf("Enter a number:");
+	scanf("%d",&num1);
+	printf("Enter a number:");
+	scanf("%d",&	num2);
+
+sum=num1+num2;
+dif=num1-num2;
+mul=num1*num2;
+div=num1/num2;
+rem=num1%num2;
+
+printf("The addition of %d and %d is:%d",num1,num2,sum);
+printf("\nThe substraction of %d and %d is:%d",num1,num2,dif);	
+printf("\nThe multiplication of %d and %d is:%d",num1,num2,mul);	
+printf("\nThe division of %d and %d is:%d",num1,num2,div);	
+printf("\nThe reminder of %d and %d is:%d",num1,num2,rem);	
+
+getch();
+return 0;
+
+}
+
+6. Write a C program to convert a given integer (in seconds) to hours, minutes and seconds. 
+	#include<stdio.h>
+	
+	int main(){
+		int sec,h,m,s;
+		
+		printf("Input Seconds:");
+		scanf("%d",&sec);
+		
+		h=(sec/3600);
+		m=(sec-(3600*h))/60;
+		
+		s=(sec-(3600*h)-(m*60));
+		
+		printf("\nHours\tMinutes\tseconds");
+		printf("\n%d\t%d\t%d",h,m,s);
+		
+		return 0;
+		
+		
+		
+	}
+7. Write a C program that accepts principle, rate of interest, time in years and computes the simple interest. 
+
+8. Write algorithm pseudo-code as well as draw flow chart to Compute the roots of the quadratic equation   ax2+bx+c =0  for given coeficient input  a, b and c. Write C program.
+#include <math.h>
+#include <stdio.h>
+int main() {
+    double a, b, c, d, root1, root2, realPart, imagPart;
+    printf("Enter coefficients a, b and c: ");
+    scanf("%lf %lf %lf", &a, &b, &c);
+    d = b * b - 4 * a * c;
+    // condition for real and different roots
+    if (d > 0) {
+        root1 = (-b + sqrt(d)) / (2 * a);
+        root2 = (-b - sqrt(d)) / (2 * a);
+        printf("root1 = %.2lf and root2 = %.2lf", root1, root2);
+    }
+    // condition for real and equal roots
+    else if (d == 0) {
+        root1 = root2 = -b / (2 * a);
+        printf("root1 = root2 = %.2lf;", root1);
+    }
+    // if roots are not real
+    else {
+        realPart = -b / (2 * a);
+        imagPart = sqrt(-d) / (2 * a);
+        printf("root1 = %.2lf+%.2lfi and root2 = %.2f-%.2fi", realPart, imagPart, realPart, imagPart);
+    }
+    return 0;
+} 
+
+9. Write a C program to check a given integer is positive even, negative even, positive odd or negative odd. 
+#include<stdio.h>
+#include<conio.h>
+
+int main(){
+	
+
+	int i;
+	printf("Enter number:");
+	scanf("%d",&i);
+	
+	
+	if(i>0){
+		
+		if(i%2==0){
+			
+			printf("%d is positive even",i);
+		}
+		else{
+			printf("%d is positive odd",i);
+		}
+	}
+	else{
+		if(i%2==0){
+			printf("%d is negative even",i);
+		}
+		else{
+			printf("%d is negative odd",i);
+		}
+		
+	}
+
+
+getch ();
+return 0;	
+}
+10. Draw a flow chart and write a C program that accepts three integers as input  and find the largest of three. 
+
+11. Write a program  that takes input of two numbers and an operator in(+,-,*,/ ) as input and pass those numbers and an operator to the function. The function should calculate the result of two numbers as indicated by operator and return the result . Display the result of computation in your program.
+#include<stdio.h>
+#include<conio.h>
+int main(){
+	float a,b;
+	char o;
+	printf("Enter two integers:");
+	scanf("%f%f",&a,&b);
+	printf("\n Enter the operator(+,-,*,/):");
+	scanf("%s ", &o);
+	printf("\n");
+	switch(o){
+		cast '+':
+			printf("%2f + %2f = %2f",a,b,(a+b));
+			break;
+		cast '-':
+			printf("%2f - %2f = %2f",a,b,(a-b));
+			break;
+		cast '*':
+			printf("%2f * %2f = %2f",a,b,(a*b));
+			break;
+		cast '/':
+			printf("%2f / %2f = %2f",a,b,(a/b));
+			break;
+	}
+	return 0;
+}
+12. Write a C program to find the eligibility of admission for a professional course based on the following criteria: 
+Marks in Maths >=65
+Marks in Phy >=55
+Marks in Chem>=50
+And Total in all three subject >=180 or Total in Math and Subjects >=140
+#include<stdio.h>
+#include<conio.h>
+int main(){
+	int m,p,c,total;
+	
+	printf("Enter the marks in maths:");
+	scanf("%d",&m);
+	printf("Enter the marks in Physics:");
+	scanf("%d",&p);
+	print("Enter the marks in Chemistry:");
+	scanf("%d",&c);
+	
+	if(m>=65&&p>=55 && c>=50 &&(m+p+c)>=180 || (m+p)>=140){
+		printf("You are eligible for admission !!");
+	}
+	
+	else{
+		printf("Sorry !! You are not eligible for admission ");
+		
+	}
+	getch();
+	return 0;
+}
+
+13. Write a C program to find the sum of first 100 natural numbers using loop.
+#include<stdio.h>
+
+int main(){
+int n,i,sum=0;
+n=100;
+i=1;
+while(i<=n){
+	sum+=i;
+	++i;
+}
+printf("sum= %d",sum);
+return 0;
+}
+14.  Write a program in C to display the multiplication table of a given integer.
+#include<stdio.h>
+
+void main(){
+int j,n;
+printf("Input the number(Table to be calculated):");
+scanf("%d",&n);
+printf("\n");
+for(j=1;j<=10;j++){
+	printf("%d X %d = %d \n",n,j,n*j);
+}
+}
+15. Write an algorithm/ program to print the prime numbers up to 100.
+#include<stdio.h>
+#include<conio.h>
+main(){
+int i, num=1;
+do{
+i=2;
+while(i<=num){
+if(num%i==0){
+	break;
+}
+i++;
+}
+if(i==num)
+printf("%d\t",num);
+num++;
+}
+while(num<=100);
+getch();
+return 0;
+}
+
+16. Write algorithm and program to compute the followings using for, do while and while loop separately.
+a. factorial of an integer N
+b. computation of  ab( a raised to power b)
+
+17. Write a program in C to make such a pattern of astrisk(*) below using loop.  
+*
+* *
+* * *
+* * * * 	up to n lines where n is an integers 
+#include<stdio.h>
+#include<conio.h>
+
+int main(){
+	int n,i,j;
+	printf("Enter the number of rows:");
+	scanf("%d",&n);
+	for(i=0;i<=n;i++){
+		
+		for(j=1;j<=i;j++){
+			
+			printf("*");
+		}
+		printf("\n");
+		
+	}
+	getch();
+	return 0;
+	
+}
+
+18. Write a program using loop to print the following floyd's triangle as given below when input is n.
+1 
+2 3
+4 5 6
+7 8 9 10
+11 12 13 14     up to n rows
+#include<stdio.h>
+#include<conio.h>
+
+int main(){
+	int n,i,j,k=0;
+	printf("Enter the number of rows:");
+	scanf("%d",&n);
+	for(i=0;i<=n;i++){
+		
+		for(j=1;j<=i;j++){
+			
+			printf("%d ",++k);
+		}
+	
+		printf("\n ");
+		
+	}
+	getch();
+	return 0;
+	
+}
+
+19. Write a program in C to make such a pattern like a pyramid with numbers increased by 1. 
+   1 
+  2 3 
+ 4 5 6 
+7 8 9 10 
+#include<stdio.h>
+int main() {
+    int i, space, rows, k,m=0;
+    printf("Enter number of rows: ");
+    scanf("%d", &rows);
+    for (i=1; i<=rows; ++i,k=0) {
+        for (space=1; space<=rows-i; ++space)
+        { printf("  "); }
+        while (k!=2*i-1) {
+            printf("%d ",++m);
+            ++k;
+            
+        }
+        printf("\n");
+    }    
+    return 0;
+}
+
+20. Write a program in C to make such a pattern like a pyramid with an asterisk.  
+   * 
+  * * 
+ * * * 
+* * * *
+#include<stdio.h>
+int main() {
+    int i, space, rows, k=0;
+    printf("Enter number of rows: ");
+    scanf("%d", &rows);
+    for (i=1; i<=rows; ++i,k=0) {
+        for (space=1; space<=rows-i; ++space)
+        { printf("  "); }
+        while (k!=2*i-1) {
+            printf("* ");
+            ++k;
+        }
+        printf("\n");
+    }    
+    return 0;
+}

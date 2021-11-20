@@ -1,0 +1,408 @@
+﻿1. Write a program to read  n  integers in an array and  find the sum and average of that array. . Print the entire array, sum and average of the array.
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+
+int main(){
+	
+	int n,i, *ptr;
+	float sum =0.0, avg;
+	
+	printf("Enter the number of elements:");
+	scanf("%d",&n);
+	
+	ptr=(int*)malloc(n*sizeof(int));
+	
+	for(i=0;i<n;i++){
+		scanf("%d",&ptr[i]);
+		sum=sum+ptr[i];
+	}
+	avg=sum/n;
+	printf("The sum is:%0.01f\n",sum);
+	printf("The average is:%0.01f",avg);
+	getch();
+}
+2. Write a program to read two  m x n matrices  and Compute the following:
+a. Sum of the two array  and print the Sum 
+b. Product of two array   and Print the  product
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+#define MAX 100
+int main(){
+	
+	int i,j,m,n,sum=0;
+	int a[MAX][MAX],b[MAX][MAX],c[MAX][MAX];
+	printf("Enter the no.of rows and column:");
+	scanf("%d%d",&m,&n);
+	
+	printf("Enter the first matrix\n");
+	for(i=0;i<m;i++){
+		for(j=0;j<n;j++){
+			printf("Enter the value of [%d][%d]",i,j);
+			scanf("%d",&a[i][j]);
+		}
+	}
+
+	printf("Enter the second matrix");
+	for(i=0;i<m;i++){
+		for(j=0;j<n;j++){
+			printf("Enter the value of [%d][%d]",i,j);
+			scanf("%d",&b[i][j]);
+		}
+	}
+
+printf("You have entered:\n");
+for(i=0;i<m;i++){
+	for(j=0;j<n;j++){
+		printf("%d\t",a[i][j]);
+	}
+	printf("\n");
+}
+printf("+\n");
+for(i=0;i<m;i++){
+	for(j=0;j<n;j++){
+		printf("%d\t",b[i][j]);
+	}
+	printf("\n");
+}
+printf("The sum is:\n");
+	for(i=0;i<m;i++){
+		for(j=0;j<n;j++){
+			c[i][j]=a[i][j]+b[i][j];
+	printf("\t%d",c[i][j]);
+	
+		}
+	printf("\n");
+	}
+		
+	getch();
+	return 0;
+} 
+
+#include <stdio.h>
+ 
+int main()
+{
+  int m, n, p, q, c, d, k, sum = 0;
+  int first[10][10], second[10][10], multiply[10][10];
+ 
+  printf("Enter number of rows and columns of first matrix\n");
+  scanf("%d%d", &m, &n);
+  printf("Enter elements of first matrix\n");
+ 
+  for (c = 0; c < m; c++){
+
+    for (d = 0; d < n; d++){
+	 scanf("%d", &first[c][d]);
+	}
+     
+   }
+  printf("Enter number of rows and columns of second matrix\n");
+  scanf("%d%d", &p, &q);
+ 
+  if (n != p)
+    printf("The multiplication isn't possible.\n");
+  else
+  {
+    printf("Enter elements of second matrix\n");
+ 
+    for (c = 0; c < p; c++)
+      for (d = 0; d < q; d++)
+        scanf("%d", &second[c][d]);
+ 
+    for (c = 0; c < m; c++) {
+      for (d = 0; d < q; d++) {
+        for (k = 0; k < p; k++) {
+          sum = sum + first[c][k]*second[k][d];
+        }
+ 
+        multiply[c][d] = sum;
+        sum = 0;
+      }
+    }
+ 
+    printf("Product of the matrices:\n");
+ 
+    for (c = 0; c < m; c++) {
+      for (d = 0; d < q; d++)
+        printf("%d\t", multiply[c][d]);
+ 
+      printf("\n");
+    }
+  }
+ 
+  return 0;
+}
+3. Write a program to read two string and do followings without using string library functions.
+a. Print the length of both strings 
+b. Copy the first string into another string and print both
+c. Concatenate the two input strings and print 
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+    int n, i, *ptr, sum = 0;
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+    ptr = (int*) malloc(n * sizeof(int));
+    printf("Enter elements: ");
+	for(i = 0; i < n; ++i)
+    {
+        scanf("%d", ptr + i);
+        sum =sum+ *(ptr + i);
+    }
+ 
+ printf("Sum = %d", sum);
+   return 0;
+}
+4. Re Write the program  in  Q. No. 3  using the string library functions.
+
+5. Write a program to input two numbers and an arithmetic operator. Compute the result of computation applying that operator to the two numbers using user defined function and print the result.
+#include <stdio.h>
+int sum(int a, int b,char d)
+{
+	int c;
+	switch(d)
+    {
+        case '+':
+           
+            printf("%d + %d ",a,b,a+b);
+             c=a+b;
+            break;
+
+        case '-':
+        printf("%d - %d ",a,b,a-b);
+             c=a-b;
+            break;
+
+        case '*':
+     printf("%d * %d ",a,b,a*b);
+             c=a*b;
+            break;
+
+        case '/':
+     printf("%d / %d ",a,b,a/b);
+            c= a/b;
+            break;
+
+      
+        default:
+            printf("Error! operator is not correct");
+    }
+	
+   
+     return c;
+     
+}
+
+int main()
+{
+	int var1,var2,var3;
+	char o;
+printf("Enter a integer:");
+scanf("%d",&var1);
+   printf("Enter a integer:");
+   scanf("%d",&var2);
+   printf("Enter a operator:");
+   scanf(" %c",&o);
+     var3 = sum(var1, var2,o);
+    printf("%d", var3);
+
+    return 0;
+}
+6. Write a program that takes input of two strings. Define your own functions as followings
+a. String_copy( string1,string2)  to copy string1 into string2.
+b. String_concat(string1,string2)  to concat string1 and string2 into string1.
+c. String_length(string1)  to count the length of string1
+d. String_cmp(string1,string2)  to return true if string1 and string2 are identical otherwise return the difference of the two characters found different in each strings.
+#include<stdio.h>
+#include<conio.h>
+int str_length(char str1[100],char str2[100]){
+int i,j,k;
+j=0;
+while(str1[i]!='\0'){
+	j++;
+	i++;
+	
+}	
+printf("The lenght of %s is:%d",str1,j);	
+}
+int str_concate(char str1[100],char str2[100]){
+	int i,j;
+
+
+  for (i = 0; str1[i] != '\0'; ++i) {
+    
+    }
+ for (j = 0; str2[j] != '\0'; ++j, ++i) {
+        str1[i] = str2[j];
+    }
+ str1[i] = '\0';
+    printf("\nAter concating:%s",str1);
+}
+int str_copy(char str4[100],char str5[100]){
+	int i;
+
+for(i=0;str4[i]!='\0';i++){
+	str5[i]=str4[i];
+}
+printf("\nAfter copying :%s",str5);	
+}
+
+
+int main(){
+	
+	char str1[100],str2[100],str3[100];
+	
+	printf("Enter a string:");
+	gets(str1);
+	printf("Enter another string:");
+	gets(str2);
+	
+    str_length(str1,str2);
+	str_concate(str1,str2);
+	str_copy(str1,str2);
+	getch();
+	return 0;
+}
+7. Write a program defining your own function to perform the fullowings
+a. Function  getarray() to read an array from  user.
+b. Function  sumarray()  to calculate and return the  sum. Print the sum in main()
+c. Function printarray() to print the array passed to function.
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+int getsarray(int m){
+	int i,*p,k;
+		printf("Enter the elements :");
+	p=(int*)malloc(m*sizeof(int));
+		for(i=0;i<m;i++){
+			scanf("%d",&*(p+i));
+		}
+		
+sumarray(p,m);
+printtarray(p,m);
+}
+int printfarray(int a[], int n){
+	int b=0;
+	printf("The number of elements are:\n");
+	for(b=0;b<n;b++){
+		printf("%d",a[b]);
+	}
+	
+}
+int sumarray(int v[], int m){
+int n=0,i;
+for(i=0;i<m;i++){
+	n=n+v[i];
+}
+Sum(n);
+}
+int Sum(int a){
+	int n=a;
+	printf("The sum is:%d",a);
+
+}
+
+int main(){
+	int m,n,o,p;
+	printf("Enter the number of elements:");
+	scanf("%d",&m);
+	getsarray(m);
+	getch();
+	return 0;
+}
+8. Write a program  defining your own function to add two numbers and return the sum  passing address of variables as function arguments.
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+
+int main(){
+	int a,b,*c,*d,e,f;
+	
+	printf("Enter two numbers:\n");
+	scanf("%d%d",&a,&b);
+	
+	sum(&a,&b);
+	getch();
+	return 0;
+}
+int sum(int *a,int *b){
+	int c=*a+*b;
+
+printf("The sum of two number is:%d",c);
+
+}
+9. Write  Programs defining Recursive function as below.
+a. To compute the factorial of an positive integer
+b. To compute the HCF between two integers
+c. To compute the  ab where  a and b are integers
+#include<stdio.h>
+#include<conio.h>
+long factorial(int);
+int main() {
+ int n;
+printf("Enter a number to calculate its factorial\n"); 
+scanf("%d", &n);
+//printf("%d! = %ld\n", n, factorial(n));
+factorial(n);
+return 0; 
+}
+long factorial(int n) {
+ int c;
+  long r = 1;
+//for (c = 1; c <= n; c++)
+ //r = r * c;
+ printf("%d! = %ld\n", n, r);
+ factorial(c<=n)
+return r;
+ }
+
+10. Wrige a program defining a structure to keep records of students for  F_name, L_name, Roll_no, Address, MobileNo.  Input the data for 10 students and print the records.
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+struct student{
+	char fname[50];
+	char lname[50];
+	int roll;
+	char address[100];
+	int mobno;
+} std1,std2,std3,std4,std5,std6;
+int main(){
+printf("Enter Student F_Name:");
+gets(std1.fname);
+//scanf(" %c", &std1.fname[]);
+printf("Enter Student L_Name:");
+gets(std1.lname);
+printf("Enter Student Roll:");
+scanf("%d",&std1.roll);
+printf("Enter Student address:");
+gets(std1.address);
+printf("Enter Student Mobile Number:");
+scanf("%d",&std1.mobno);
+	printf("\nThe F_name of student is:%c",*std1.fname);
+//	puts(*std1.fname);
+	printf("\nThe L_name of student is:%c",*std1.lname);
+//	puts(*std1.lname);
+	printf("\nThe Rol no. of student is:%d",std1.roll);
+//	puts(*std1.roll);
+	printf("\nThe address of student is:%c",*std1.address);
+//	puts(*std1.address);
+	printf("\nThe mobile number of student is:%d",std1.mobno);
+//	puts(*std1.mobno);	
+		
+	getch();
+	return 0;
+}
+11. Write a program to get input of n numbers in an array using dynamic memory allocation and print the array elements.
+
+12. Write a program to read a file and  count the number of lines and characters in that file.
+
+13. Write a program to read a text file and copy all contents in the new file.  Open the newly copied file and print the content into screen.
+
+14. Write a ‘C’ program to read a text file and print the text in reverse order.
+
+15. Write a program to display the following geometric objects in screen using graphics functions.
+A  line,   circle, rectangle using line, Triangle using line  and  arc  one by one on key key stroke  by user.
